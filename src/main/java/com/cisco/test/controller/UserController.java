@@ -1,6 +1,7 @@
 package com.cisco.test.controller;
 
 import com.cisco.test.dto.User;
+import com.cisco.test.util.UserValidation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class UserController {
 
     @PostMapping
     public void saveUser(@RequestBody User user) {
-        //UserValidation.validateUser(user);
+        UserValidation.validateUser(user);
         users.add(user);
     }
 
